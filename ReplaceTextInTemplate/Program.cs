@@ -11,7 +11,7 @@ namespace ReplaceTextInTemplate
 	{
 		static void Main(string[] args)
 		{
-			VectorDesign design = VectorDesign.Load(@"Template.PV", VectorDesignFileTypes.Pv);
+			VectorDesign design = VectorDesign.Load(@"ReplaceTextInTemplate.PV", VectorDesignFileTypes.Pv);
 
 			// VectorDesign.ProcessTextObjects will iterate through the entire design to 
 			// find all Pulse.VectorEngine.TextObject objects and call the supplied delegate

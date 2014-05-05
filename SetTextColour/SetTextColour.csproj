@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C23AA15-1878-4829-85FC-51FEAE8DE454}</ProjectGuid>
+    <ProjectGuid>{952A7455-E686-4E50-BB17-1B5F3E8ECD8A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReplaceTextInTemplate</RootNamespace>
-    <AssemblyName>ReplaceTextInTemplate</AssemblyName>
+    <RootNamespace>SetTextColour</RootNamespace>
+    <AssemblyName>SetTextColour</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,8 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ReplaceTextInTemplate.ai" />
-    <None Include="ReplaceTextInTemplate.PV">
+    <None Include="SetTextColour.ai" />
+    <None Include="SetTextColour.PV">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
