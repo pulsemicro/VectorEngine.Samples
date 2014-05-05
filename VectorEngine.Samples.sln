@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceTextInTemplate", "Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetTextColour", "SetTextColour\SetTextColour.csproj", "{952A7455-E686-4E50-BB17-1B5F3E8ECD8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetPrimaryAndSecondaryColours", "SetPrimaryAndSecondaryColours\SetPrimaryAndSecondaryColours.csproj", "{D3314DC1-7760-494F-BB82-98C1836353D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{952A7455-E686-4E50-BB17-1B5F3E8ECD8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{952A7455-E686-4E50-BB17-1B5F3E8ECD8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{952A7455-E686-4E50-BB17-1B5F3E8ECD8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3314DC1-7760-494F-BB82-98C1836353D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3314DC1-7760-494F-BB82-98C1836353D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3314DC1-7760-494F-BB82-98C1836353D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3314DC1-7760-494F-BB82-98C1836353D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
