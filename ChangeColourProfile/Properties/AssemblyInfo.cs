@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ReplaceTextInTemplate")]
+[assembly: AssemblyTitle("ChangeColourProfile")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Pulse Microsystems Ltd.")]
-[assembly: AssemblyProduct("ReplaceTextInTemplate")]
+[assembly: AssemblyProduct("ChangeColourProfile")]
 [assembly: AssemblyCopyright("Copyright © 2014, Pulse Microsystems Ltd.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("64a08720-6707-466c-9b1d-b5e6064a989d")]
+[assembly: Guid("a32d12d2-80a7-49fc-8bff-3cf342fee3d7")]
 
 // Version information for an assembly consists of the following four values:
 //
