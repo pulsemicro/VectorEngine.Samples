@@ -42,9 +42,11 @@ namespace ReplaceMascot
 							// Note that this is a shallow copy, so the objects
 							// technically exist in both designs.
 							g.AddObjects(layer.Objects);
-
-							// TODO: Copy design resources (such as bitmaps used by the objects)
 						}
+
+						// Copy design resources (such as bitmaps used by the objects)
+						var resourceManager2 = design2.ResourceManager;
+						resourceManager2.CopyContentsTo(design.ResourceManager);
 
 						// Get the bounding box of the new object
 						var newBounds = g.GetBounds(design.Context);
@@ -53,6 +55,34 @@ namespace ReplaceMascot
 						// of the old object was
 						var transform = Matrix3x2.Translate(oldBounds.Center.X - newBounds.Center.X, oldBounds.Center.Y - newBounds.Center.Y);
 						g.ApplyTransform(transform);
+
+						// Scale the new mascot so that the new mascot fits completely inside
+						// the bounding box of the original mascot
+
+						// Start by scaling in the Y direction so the height of the
+						// new mascot will be the same as the height of the old mascot
+						double scale = oldBounds.Height / newBounds.Height;
+						
+						// But will the new mascot fit in the X direction too?
+						if (newBounds.Width * scale > oldBounds.Width)
+						{
+							// No it would not, so scale by the X direction instead.
+							// This should make the height of the new mascot smaller than
+							// the height of the old mascot
+							scale = oldBounds.Width / newBounds.Width;
+
+							System.Diagnostics.Debug.Assert(newBounds.Height * scale <= oldBounds.Height);
+						}
+
+						transform = Matrix3x2.Scale(scale, scale, oldBounds.Center);
+						g.ApplyTransform(transform);
+
+						// Verification
+						newBounds = g.GetBounds(design.Context);
+						System.Diagnostics.Debug.Assert(newBounds.Center.X == oldBounds.Center.X);
+						System.Diagnostics.Debug.Assert(newBounds.Center.Y == oldBounds.Center.Y);
+						System.Diagnostics.Debug.Assert(newBounds.Width <= oldBounds.Width);
+						System.Diagnostics.Debug.Assert(newBounds.Height <= oldBounds.Height);
 
 						// We want to replace the old object with our new one
 						obj = g;
