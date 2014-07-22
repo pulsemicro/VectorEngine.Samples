@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeColourProfile", "Chan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceTextWithBackgroundImage", "ReplaceTextWithBackgroundImage\ReplaceTextWithBackgroundImage.csproj", "{F0C2A3DB-2667-46E2-816E-E38EE2A81E37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistressDesign", "DistressDesign\DistressDesign.csproj", "{21EB69EE-30C5-452D-AD11-42BBEE04B9E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{F0C2A3DB-2667-46E2-816E-E38EE2A81E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0C2A3DB-2667-46E2-816E-E38EE2A81E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0C2A3DB-2667-46E2-816E-E38EE2A81E37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21EB69EE-30C5-452D-AD11-42BBEE04B9E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21EB69EE-30C5-452D-AD11-42BBEE04B9E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21EB69EE-30C5-452D-AD11-42BBEE04B9E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21EB69EE-30C5-452D-AD11-42BBEE04B9E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
