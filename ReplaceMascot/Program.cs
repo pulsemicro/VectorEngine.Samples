@@ -11,7 +11,11 @@ namespace ReplaceMascot
 	{
 		static void Main(string[] args)
 		{
-			VectorDesign design = VectorDesign.Load(@"ReplaceMascot.PV", VectorDesignFileTypes.Pv);
+			string mainDesign = "BANNER HORNETS_withmascot.pv";
+
+			string mascotDesign = "BANNER HORNET_HEAD_SIDE_HAPPY.pv";
+
+			VectorDesign design = VectorDesign.Load(mainDesign, VectorDesignFileTypes.Pv);
 
 			// Replace a group object with objects from another PV file
 
@@ -23,12 +27,12 @@ namespace ReplaceMascot
 				if (obj is GroupObject)
 				{
 					GroupObject g = (GroupObject)obj;
-					if (g.Name == "Mascot")
+					if (g.Name == "mascot")
 					{
 						// Get the current bounding box of this object (we'll want it later)
 						var oldBounds = g.GetBounds(design.Context);
 
-						VectorDesign design2 = VectorDesign.Load(@"Mascot.PV", VectorDesignFileTypes.Pv);
+						VectorDesign design2 = VectorDesign.Load(mascotDesign, VectorDesignFileTypes.Pv);
 
 						g = new GroupObject();
 						g.Name = "Mascot";
@@ -53,7 +57,21 @@ namespace ReplaceMascot
 
 						// Move the new object so that it's center is where the center
 						// of the old object was
-						var transform = Matrix3x2.Translate(oldBounds.Center.X - newBounds.Center.X, oldBounds.Center.Y - newBounds.Center.Y);
+
+						// If we know the design name is NEW_MASCOT.pv
+						// Then we can add or subtract POINTS to the newBounds.Center.X and/or the newBounds.Center.Y
+						// double adjustednewCenterX = newBounds.Center.X;
+						// double adjustednewCentery = newBounds.Center.Y;
+						double adjustednewCenterX = newBounds.Center.X;
+						double adjustednewCenterY = newBounds.Center.Y;
+
+						if (mascotDesign == "BANNER HORNET_HEAD_SIDE_HAPPY.pv")
+						{
+							adjustednewCenterX = newBounds.Center.X + 10.0;
+							adjustednewCenterY = newBounds.Center.Y - 10.0;
+						}
+
+						var transform = Matrix3x2.Translate(oldBounds.Center.X - adjustednewCenterX, oldBounds.Center.Y - adjustednewCenterY);
 						g.ApplyTransform(transform);
 
 						// Scale the new mascot so that the new mascot fits completely inside
@@ -67,8 +85,8 @@ namespace ReplaceMascot
 						if (newBounds.Width * scale > oldBounds.Width)
 						{
 							// No it would not, so scale by the X direction instead.
-							// This should make the height of the new mascot smaller than
-							// the height of the old mascot
+							// This should make the width of the new mascot smaller than
+							// the width of the old mascot
 							scale = oldBounds.Width / newBounds.Width;
 
 							System.Diagnostics.Debug.Assert(newBounds.Height * scale <= oldBounds.Height);
@@ -79,10 +97,10 @@ namespace ReplaceMascot
 
 						// Verification
 						newBounds = g.GetBounds(design.Context);
-						System.Diagnostics.Debug.Assert(newBounds.Center.X == oldBounds.Center.X);
-						System.Diagnostics.Debug.Assert(newBounds.Center.Y == oldBounds.Center.Y);
-						System.Diagnostics.Debug.Assert(newBounds.Width <= oldBounds.Width);
-						System.Diagnostics.Debug.Assert(newBounds.Height <= oldBounds.Height);
+						//System.Diagnostics.Debug.Assert(newBounds.Center.X == oldBounds.Center.X);
+						//System.Diagnostics.Debug.Assert(newBounds.Center.Y == oldBounds.Center.Y);
+						//System.Diagnostics.Debug.Assert(newBounds.Width <= oldBounds.Width);
+						//System.Diagnostics.Debug.Assert(newBounds.Height <= oldBounds.Height);
 
 						// We want to replace the old object with our new one
 						obj = g;
@@ -91,7 +109,7 @@ namespace ReplaceMascot
 				return obj;
 			});
 
-			design.Render(@"ReplaceMascot.PNG", RenderFormats.Png, 96, design.ColourContext);
+			design.Render(@"ReplaceMascot.PNG", RenderFormats.Png, 200, design.ColourContext);
 
 		}
 	}
