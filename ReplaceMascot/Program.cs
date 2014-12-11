@@ -35,7 +35,7 @@ namespace ReplaceMascot
 						VectorDesign design2 = VectorDesign.Load(mascotDesign, VectorDesignFileTypes.Pv);
 
 						g = new GroupObject();
-						g.Name = "Mascot";
+						g.Name = "mascot";
 
 						// Copy all objects from page 1 of design2 to the new object
 						// Assumes a page exists, which may not be the case.

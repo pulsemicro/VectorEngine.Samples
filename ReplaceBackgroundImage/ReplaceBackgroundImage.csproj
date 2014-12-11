@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{907D540F-189D-450D-93F0-48942C6B7860}</ProjectGuid>
+    <ProjectGuid>{9B5DB424-A43D-4FE3-89F2-48F2E185B73E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReplaceMascot</RootNamespace>
-    <AssemblyName>ReplaceMascot</AssemblyName>
+    <RootNamespace>ReplaceBackgroundImage</RootNamespace>
+    <AssemblyName>ReplaceBackgroundImage</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,20 +49,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="BANNER HORNETS.pv" />
-    <None Include="BANNER HORNETS_withmascot.pv" />
-    <None Include="BANNER HORNET_HEAD_FRONT_HAPPY.pv" />
-    <None Include="BANNER HORNET_HEAD_FRONT_MEAN.pv" />
-    <None Include="BANNER HORNET_HEAD_SIDE_HAPPY.pv" />
-    <None Include="BANNER HORNET_HEAD_SIDE_MEAN.pv" />
-    <None Include="Mascot.ai" />
-    <None Include="Mascot.PV">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="ReplaceMascot.ai" />
-    <None Include="ReplaceMascot.PV">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="CAMOUFLAGE.ai" />
+    <None Include="CAMOUFLAGE.pv" />
+    <None Include="LEOPARD.ai" />
+    <None Include="LEOPARD.pv" />
+    <None Include="VIKINGS_COMOUFLAGE.ai" />
+    <None Include="VIKINGS_COMOUFLAGE.pv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="comouflage.png" />
+    <Content Include="leopard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
